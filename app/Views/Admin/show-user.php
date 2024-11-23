@@ -67,9 +67,54 @@
                         <div class="main-content-inner">
                             <!-- main-content-wrap -->
                             <div class="main-content-wrap">                              
-                                <div class="wg-box">
-                                    dashboard
-
+                            <div class="wg-box">
+                                    <div class="title-box">
+                                        Chi tiết tài khoản
+                                    </div>  
+                                    <form action="#" >
+                                        <div class="mb-5">
+                                            <label for="name">Name</label>
+                                            <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="<?= $user->name?>" readonly>
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" id="email" placeholder="Email" class="form-control" value="<?= $user->email?>" readonly>
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="address">Address</label>
+                                            <input type="text" name="address" id="address" placeholder="Address" class="form-control" value="<?= $user->address?>" readonly>
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="phone">Phone</label>
+                                            <input type="text" name="phone" id="phone" placeholder="Phone" class="form-control" value="<?= $user->phone?>" readonly>
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="image">Image</label>
+                                            <img src="<?= $user->image?>" alt="" width="50">
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="role">Role</label>
+                                            <select name="role" id="role" class="form-control" readonly>
+                                                <option value="" hidden>Quyền</option>
+                                                <option value="1"
+                                                    <?php
+                                                        if($user->role == "1"){
+                                                            echo "selected";
+                                                        }
+                                                    ?>
+                                                    >Admin
+                                                </option>
+                                                <option value="2"
+                                                    <?php
+                                                        if($user->role == "2"){
+                                                            echo "selected";
+                                                        }
+                                                    ?>
+                                                    >User
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <!-- /main-content-wrap -->

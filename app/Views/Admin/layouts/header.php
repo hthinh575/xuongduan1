@@ -375,7 +375,7 @@
                                                     <img src="assets/Admin/images/avatar/user-1.png" alt="">
                                                 </span>
                                                 <span class="flex flex-column">
-                                                    <span class="body-text text-main-dark">Phạm Hưng Thịnh</span>
+                                                    <span class="body-text text-main-dark"><?= $_SESSION['users']['name'] ?></span>
                                                     <span class="text-tiny">Quản trị viên</span>
                                                 </span>
                                             </span>

@@ -67,9 +67,73 @@
                         <div class="main-content-inner">
                             <!-- main-content-wrap -->
                             <div class="main-content-wrap">                              
-                                <div class="wg-box">
-                                    dashboard
-
+                            <div class="wg-box">
+                                <?php 
+                                    if(isset($_SESSION['message'])){
+                                        echo "<p>". $_SESSION['message'] . "</p>";
+                                        unset($_SESSION['message']);
+                                    }
+                                    if(isset($_SESSION['error'])){
+                                        echo "<p>". $_SESSION['error'] . "</p>";
+                                        unset($_SESSION['error']);
+                                    }
+                                ?>
+                                    <div class="title-box">
+                                        Cập nhật tài khoản
+                                    </div>  
+                                    <form action="<?= BASE_URL ?>?role=admin&act=update-post-user&id=<?= $_GET['id']?>" 
+                                    method="post" enctype="multipart/form-data">
+                                        <div class="mb-5">
+                                            <label for="name">Name</label>
+                                            <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="<?= $user->name?>">
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" id="email" placeholder="Email" class="form-control" value="<?= $user->email?>">
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="address">Address</label>
+                                            <input type="text" name="address" id="address" placeholder="Address" class="form-control" value="<?= $user->address?>">
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="phone">Phone</label>
+                                            <input type="text" name="phone" id="phone" placeholder="Phone" class="form-control" value="<?= $user->phone?>">
+                                        </div>
+                                        <div class="mb-5">
+                                            <img src="<?= $user->image?>" alt="" width="50">
+                                            <label for="image">Image</label>
+                                            <input type="file" name="image" id="image" accept="image/*" class="form-control">
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="role">Role</label>
+                                            <select name="role" id="role" class="form-control">
+                                                <option value="" hidden>Quyền</option>
+                                                <option value="1"
+                                                    <?php
+                                                        if($user->role == "1"){
+                                                            echo "selected";
+                                                        }
+                                                    ?>
+                                                    >Admin
+                                                </option>
+                                                <option value="2"
+                                                    <?php
+                                                        if($user->role == "2"){
+                                                            echo "selected";
+                                                        }
+                                                    ?>
+                                                    >User
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-warning">Lưu lại</button>
+                                        
+                                        
+                                    </form>
                                 </div>
                             </div>
                             <!-- /main-content-wrap -->
