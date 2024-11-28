@@ -1,6 +1,6 @@
 <div class="section-menu-left">
                     <div class="box-logo">
-                        <a href="index.html" id="site-logo-inner">
+                        <a href="<?= BASE_URL ?>?role=admin&act=home" id="site-logo-inner">
                             <img class="" id="logo_header" alt="" src="assets/Admin/images/logowhitee_preview_rev_.png" data-light="assets/Admin/images/logowhitee_preview_rev_.png" data-dark="assets/Admin/images/logodark_preview_rev_1.png" >
                         </a>
                         <div class="button-show-hide">
@@ -28,37 +28,51 @@
                                             <div class="text">Bảng điều khiển</div>
                                         </a>
                                     </li>
-                                    <li class="menu-item has-children">
+                                    <li class="menu-item has-children
+                                        <?php
+                                            if(isset($_GET['act']) && ($_GET['act'] == 'all-product' || $_GET['act'] == 'add-product' || $_GET['act'] == 'show-product')){
+                                                echo 'active';
+                                            }
+                                        
+                                        ?>
+                                    ">
                                         <a href="javascript:void(0);" class="menu-item-button">
                                             <div class="icon"><i class="icon-file-plus"></i></div>
                                             <div class="text">Sản phẩm</div>
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="sub-menu-item">
-                                                <a href="product-list.html" class="">
+                                                <a href="<?= BASE_URL ?>?role=admin&act=all-product" class="">
                                                     <div class="text">Danh sách sản phẩm</div>
                                                 </a>
                                             </li>
                                             <li class="sub-menu-item">
-                                                <a href="add-product.html" class="">
+                                                <a href="<?= BASE_URL ?>?role=admin&act=add-product" class="">
                                                     <div class="text">Thêm sản phẩm</div>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item has-children">
+                                    <li class="menu-item has-children
+                                        <?php
+                                            if(isset($_GET['act']) && ($_GET['act'] == 'all-category' || $_GET['act'] == 'add-category' || $_GET['act'] == 'update-category' || $_GET['act'] == 'show-category')){
+                                                echo 'active';
+                                            }
+                                        
+                                        ?>
+                                    ">
                                         <a href="javascript:void(0);" class="menu-item-button">
                                             <div class="icon"><i class="icon-layers"></i></div>
                                             <div class="text">Danh mục</div>
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="sub-menu-item">
-                                                <a href="category-list.html" class="">
+                                                <a href="<?= BASE_URL ?>?role=admin&act=all-category" class="">
                                                     <div class="text">Danh sách danh mục</div>
                                                 </a>
                                             </li>
                                             <li class="sub-menu-item">
-                                                <a href="new-category.html" class="">
+                                                <a href="<?= BASE_URL ?>?role=admin&act=add-category" class="">
                                                     <div class="text">Thêm danh mục</div>
                                                 </a>
                                             </li>

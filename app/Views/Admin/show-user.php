@@ -6,6 +6,7 @@
 
 
 <!-- Mirrored from themesflat.co/html/ecomus/admin-ecomus/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Nov 2024 14:58:29 GMT -->
+
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
@@ -66,51 +67,71 @@
                         <!-- main-content-wrap -->
                         <div class="main-content-inner">
                             <!-- main-content-wrap -->
-                            <div class="main-content-wrap">                              
-                            <div class="wg-box">
-                                    <div class="title-box">
-                                        Chi tiết tài khoản
-                                    </div>  
-                                    <form action="#" >
+                            <div class="main-content-wrap">
+                                <div class="flex items-center flex-wrap justify-between gap20 mb-30">
+                                    <h3>Chi tiết tài khoản</h3>
+                                    <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                                        <li>
+                                            <a href="<?= BASE_URL ?>?role=admin&act=home">
+                                                <div class="text-tiny">Bảng điều khiển</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <i class="icon-chevron-right"></i>
+                                        </li>
+                                        <li>
+                                            <a href="<?= BASE_URL ?>?role=admin&act=all-user">
+                                                <div class="text-tiny">Tài khoản</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <i class="icon-chevron-right"></i>
+                                        </li>
+                                        <li>
+                                            <div class="text-tiny">Chi tiết tài khoản</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="wg-box">
+
+                                    <form action="#">
                                         <div class="mb-5">
-                                            <label for="name">Name</label>
-                                            <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="<?= $user->name?>" readonly>
+                                            <div class="body-title mb-10">Tên tài khoản <span class="tf-color-1">*</span></div>
+                                            <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="<?= $user->name ?>" readonly>
                                         </div>
                                         <div class="mb-5">
-                                            <label for="email">Email</label>
-                                            <input type="email" name="email" id="email" placeholder="Email" class="form-control" value="<?= $user->email?>" readonly>
+                                            <div class="body-title mb-10">Email <span class="tf-color-1">*</span></div>
+                                            <input type="email" name="email" id="email" placeholder="Email" class="form-control" value="<?= $user->email ?>" readonly>
                                         </div>
                                         <div class="mb-5">
-                                            <label for="address">Address</label>
-                                            <input type="text" name="address" id="address" placeholder="Address" class="form-control" value="<?= $user->address?>" readonly>
+                                            <div class="body-title mb-10">Địa chỉ <span class="tf-color-1">*</span></div>
+                                            <input type="text" name="address" id="address" placeholder="Address" class="form-control" value="<?= $user->address ?>" readonly>
                                         </div>
                                         <div class="mb-5">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" name="phone" id="phone" placeholder="Phone" class="form-control" value="<?= $user->phone?>" readonly>
+                                            <div class="body-title mb-10">Số điện thoại <span class="tf-color-1">*</span></div>
+                                            <input type="text" name="phone" id="phone" placeholder="Phone" class="form-control" value="<?= $user->phone ?>" readonly>
                                         </div>
                                         <div class="mb-5">
-                                            <label for="image">Image</label>
-                                            <img src="<?= $user->image?>" alt="" width="50">
+                                            <div class="body-title mb-10">Ảnh đại diện <span class="tf-color-1">*</span></div>
+                                            <img src="<?= $user->image ?>" alt="" width="50">
                                         </div>
                                         <div class="mb-5">
                                             <label for="role">Role</label>
-                                            <select name="role" id="role" class="form-control" readonly>
+                                            <select name="role" id="role" class="mb-10" readonly>
                                                 <option value="" hidden>Quyền</option>
                                                 <option value="1"
                                                     <?php
-                                                        if($user->role == "1"){
-                                                            echo "selected";
-                                                        }
-                                                    ?>
-                                                    >Admin
+                                                    if ($user->role == "1") {
+                                                        echo "selected";
+                                                    }
+                                                    ?>>Admin
                                                 </option>
                                                 <option value="2"
                                                     <?php
-                                                        if($user->role == "2"){
-                                                            echo "selected";
-                                                        }
-                                                    ?>
-                                                    >User
+                                                    if ($user->role == "2") {
+                                                        echo "selected";
+                                                    }
+                                                    ?>>User
                                                 </option>
                                             </select>
                                         </div>
@@ -162,4 +183,5 @@
 
 
 <!-- Mirrored from themesflat.co/html/ecomus/admin-ecomus/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Nov 2024 14:58:54 GMT -->
+
 </html>

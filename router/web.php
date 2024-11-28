@@ -4,7 +4,73 @@ $role = isset($_GET['role']) ? $_GET['role'] : "user";
 $act = isset($_GET['act']) ? $_GET['act'] : "";
 
 if($role == "user"){
-    echo "Trang User";
+    switch($act){
+        case ''; {
+            $dashBoardController = new DashboardController();
+            $dashBoardController->dashboard();
+            break;
+        }
+
+        case 'login'; {
+            $loginController = new LoginUserController();
+            $loginController->login();
+            break;
+        }
+
+        case 'post-login'; {
+            $loginController = new LoginUserController();
+            $loginController->postLogin();
+            break;
+        }
+
+        case 'logout'; {
+            $loginController = new LoginUserController();
+            $loginController->logout();
+            break;
+        }
+
+        case 'register'; {
+            $loginController = new LoginUserController();
+            $loginController->register();
+            break;
+        }
+
+        case 'post-register'; {
+            $loginController = new LoginUserController();
+            $loginController->postRegister();
+            break;
+        }
+
+        case 'my-account'; {
+            $dashBoardController = new DashboardController();
+            $dashBoardController->myAccount();
+            break;
+        }
+
+        case 'account-detal'; {
+            $dashBoardController = new DashboardController();
+            $dashBoardController->accountDetal();
+            break;
+        }
+
+        case 'account-update'; {
+            $dashBoardController = new DashboardController();
+            $dashBoardController->accountUpdate();
+            break;
+        }
+
+        case 'shop'; {
+            $dashBoardController = new DashboardController();
+            $dashBoardController->showShop();
+            break;
+        }
+
+        case 'product-detail'; {
+            $dashBoardController = new DashboardController();
+            $dashBoardController->productDetail();
+            break;
+        }
+    }
 }else{
     switch($act){
         //http://localhost/duan1/?role=admin&act=home
@@ -66,9 +132,89 @@ if($role == "user"){
             break;
         }
 
-        case 'product': {
+        case 'all-category'; {
+            $categoryController = new CategoryController();
+            $categoryController->getAllCategory();
             break;
         }
+
+        case 'add-category'; {
+            $categoryController = new CategoryController();
+            $categoryController->addCategory();
+            break;
+        }
+
+        case 'add-post-category'; {
+            $categoryController = new CategoryController();
+            $categoryController->addPostCategory();
+            break;
+        }
+
+        case 'delete-category'; {
+            $categoryController = new CategoryController();
+            $categoryController->deleteCategory();
+            break;
+        }
+
+        case 'update-category'; {
+            $categoryController = new CategoryController();
+            $categoryController->updateCategory();
+            break;
+        }
+
+        case 'update-post-category'; {
+            $categoryController = new CategoryController();
+            $categoryController->updatePostCategory();
+            break;
+        }
+
+        case 'show-category'; {
+            $categoryController = new CategoryController();
+            $categoryController->showCategory();
+            break;
+        }
+
+        case 'all-product': {
+            $productController = new ProductController();
+            $productController->showAllProduct();
+            break;
+        }
+
+        case 'add-product': {
+            $productController = new ProductController();
+            $productController->addProduct();
+            break;
+        }
+
+        case 'add-post-product': {
+            $productController = new ProductController();
+            $productController->addPostProduct();
+            break;
+        }
+
+        case 'delete-product': {
+            $productController = new ProductController();
+            $productController->deleteProduct();
+            break;
+        }
+
+        case 'update-product': {
+            $productController = new ProductController();
+            $productController->updateProduct();
+            break;
+        }
+        case 'update-post-product': {
+            $productController = new ProductController();
+            $productController->updatePostProduct();
+            break;
+        }
+
+        case 'show-product'; {
+            $productController = new ProductController();
+            $productController->showProduct();
+            break;
+        }
+
         default:{
             $homeController = new HomeController();
             $homeController->dashboard();

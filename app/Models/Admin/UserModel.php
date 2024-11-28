@@ -24,6 +24,13 @@ class UserModel{
         $image = $destPath;
         $now = date('Y-m-d H:i:s');
 
+        $sqlCheck = "SELECT * FROM users WHERE email = :email";
+        $stmt1 = $this->db->pdo->prepare($sqlCheck);
+        $stmt1->bindParam(':email', $email);
+        $stmt1->execute();
+        if(count($stmt1->fetchAll()) > 0){
+            return false;
+        }
 
         $sql = "
         INSERT INTO users(name,email,password,address,phone,image,created_at,updated_at,role) 

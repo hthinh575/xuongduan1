@@ -10,7 +10,7 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Remos eCommerce Admin Dashboard HTML Template</title>
+    <title>MHT Tea - Login</title>
 
     <meta name="author" content="themesflat.com">
 
@@ -33,8 +33,8 @@
     <link rel="stylesheet" href="assets/Admin/icon/style.css">
 
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="assets/Admin/images/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/Admin/images/favicon.png">
+    <link rel="shortcut icon" href="assets/Admin/images/logomain_preview_rev.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/Admin/images/logomain_preview_rev.png">
 
 </head>
 

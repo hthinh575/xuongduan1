@@ -1,8 +1,8 @@
 <div class="header-dashboard">
                         <div class="wrap">
                             <div class="header-left">
-                                <a href="index.html">
-                                    <img class="" id="logo_header_mobile" alt="" src="https://themesflat.co/html/ecomus/assets/Admin/images/logo/logo.svg" data-light="../assets/Admin/images/logo/logo.svg" data-dark="https://themesflat.co/html/ecomus/assets/Admin/images/logo/logo-white.svg" >
+                                <a href="<?= BASE_URL ?>?role=admin&act=home" id="site-logo-inner">
+                                    <img class="" id="logo_header" alt="" src="assets/Admin/images/logowhitee_preview_rev_.png" data-light="assets/Admin/images/logowhitee_preview_rev_.png" data-dark="assets/Admin/images/logodark_preview_rev_1.png" >
                                 </a>
                                 <div class="button-show-hide">
                                     <i class="icon-chevron-left"></i>
@@ -423,7 +423,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="login.html" class="user-item">
+                                                <a href="<?=BASE_URL?>?role=admin&act=logout" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-log-out"></i>
                                                     </div>
